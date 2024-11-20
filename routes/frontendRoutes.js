@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const Crop = require("../../models/backend/crop");
-const Disease = require("../../models/backend/disease");
+const Crop = require("../models/backend/crop");
+const Disease = require("../models/backend/disease");
 
 // Route to display all crops
 router.get("/crops", async (req, res) => {
