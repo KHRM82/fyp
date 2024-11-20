@@ -1,0 +1,30 @@
+/* Crop Management Page Styles */
+#crop-list {
+  list-style: none;
+  padding: 0;
+}
+
+#crop-list li {
+  background: #fff;
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#crop-list li a {
+  text-decoration: none;
+  color: #28a745;
+  font-weight: bold;
+}
+
+#crop-list li a:hover {
+  text-decoration: underline;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}

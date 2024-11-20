@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Disease</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="card">
+            <div class="card-header bg-warning text-white">
+              <h4 class="mb-0">Edit Disease</h4>
+            </div>
+            <div class="card-body">
+              <form
+                action="/admin/edit-disease/<%= disease._id %>"
+                method="POST"
+                enctype="multipart/form-data"
+              >
+                <input type="hidden" name="_method" value="PUT" />
+                <div class="form-group">
+                  <label for="diseaseName">Disease Name</label>
+                  <input
+                    type="text"
+                    id="diseaseName"
+                    name="diseaseName"
+                    class="form-control"
+                    value="<%= disease.diseaseName %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="scientificName">Scientific Name</label>
+                  <input
+                    type="text"
+                    id="scientificName"
+                    name="scientificName"
+                    class="form-control"
+                    value="<%= disease.scientificName %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="cropAffected">Crop Affected</label>
+                  <input
+                    type="text"
+                    id="cropAffected"
+                    name="cropAffected"
+                    class="form-control"
+                    value="<%= disease.cropAffected %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="symptoms">Symptoms</label>
+                  <textarea
+                    id="symptoms"
+                    name="symptoms"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= disease.symptoms %></textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="diseaseCycle">Disease Cycle</label>
+                  <textarea
+                    id="diseaseCycle"
+                    name="diseaseCycle"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= disease.diseaseCycle %></textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="favorableConditions">Favorable Conditions</label>
+                  <textarea
+                    id="favorableConditions"
+                    name="favorableConditions"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= disease.favorableConditions %></textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="controlMeasures">Control Measures</label>
+                  <textarea
+                    id="controlMeasures"
+                    name="controlMeasures"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= disease.controlMeasures %></textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="chemicalControl">Chemical Control</label>
+                  <textarea
+                    id="chemicalControl"
+                    name="chemicalControl"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= disease.chemicalControl %></textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="biologicalControl">Biological Control</label>
+                  <textarea
+                    id="biologicalControl"
+                    name="biologicalControl"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= disease.biologicalControl %></textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="culturalControl">Cultural Control</label>
+                  <textarea
+                    id="culturalControl"
+                    name="culturalControl"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= disease.culturalControl %></textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="preventiveMeasures">Preventive Measures</label>
+                  <textarea
+                    id="preventiveMeasures"
+                    name="preventiveMeasures"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= disease.preventiveMeasures %></textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="photos">Upload Photos</label>
+                  <input
+                    type="file"
+                    id="photos"
+                    name="photos"
+                    class="form-control"
+                    multiple
+                  />
+                </div>
+                <button type="submit" class="btn btn-warning btn-block">
+                  Update Disease
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

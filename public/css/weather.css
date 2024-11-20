@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* Basic reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Rubik", sans-serif;
+}
+
+/* Root Variables */
+:root {
+  --font-color-main: #332464;
+  --white-color: #fff;
+}
+
+/* Body Styling */
+body {
+  background: url("/images/homeImg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: var(--font-color-main);
+}
+
+/* Container Styling */
+.container-fluid {
+  padding: 20px;
+}
+
+/* Section Styling */
+.left-section,
+.weather-section,
+.center-section {
+  padding: 20px;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Welcome Note and Feedback Form */
+.welcome-note {
+  margin-bottom: 20px;
+}
+
+.feedback-div {
+  text-align: center;
+}
+
+.feedback-div a {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: var(--white-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.feedback-div a:hover {
+  background-color: #0056b3;
+}
+
+/* Crop Management and Disease Management Cards */
+.card {
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #b7da77;
+}
+
+.card-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 16px;
+  color: #666;
+}

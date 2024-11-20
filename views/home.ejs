@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="png" href="/images/icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/weather.css" />
+    <title>Farmer's Companion</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Left Section: Welcome Note and Feedback Link -->
+        <div class="col-md-3">
+          <div class="welcome-note">
+            <h2
+              style="
+                font-family: 'Arial', sans-serif;
+                font-size: 36px;
+                font-weight: bold;
+                color: #4caf50;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+                padding: 10px;
+                filter: drop-shadow(0, 4px, 8px, 0.3 rgba(240, 237, 237, 0.3));
+                display: inline-block;
+              "
+            >
+              Farmer's Companion
+            </h2>
+          </div>
+          <div class="feedback-div">
+            <a href="/feedback">Give Feedback</a>
+          </div>
+          <!-- Admin Login Link -->
+          <div class="admin-login">
+            <a href="/login" class="btn btn-primary mt-3">Admin Login</a>
+          </div>
+        </div>
+
+        <!-- Center Section: Crop Management and Disease Management -->
+        <div class="col-md-6">
+          <div id="crop-info" class="my-4">
+            <a href="/crop-management">
+              <div class="crop-management card">
+                <div class="card-body">
+                  <h2 class="card-title">Crop Management</h2>
+                  <p class="card-text">
+                    Details about crop management techniques, best practices,
+                    and more.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div id="disease-management" class="my-4">
+            <a href="/disease-management">
+              <div class="disease-management card">
+                <div class="card-body">
+                  <h2 class="card-title">Crop Disease Management</h2>
+                  <p class="card-text">
+                    Information on how to identify and manage common crop
+                    diseases.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div id="weather-forecast" class="my-4">
+            <a href="/weather-forecast">
+              <div class="disease-management card">
+                <div class="card-body">
+                  <h2 class="card-title">Weather Forecast</h2>
+                  <p class="card-text">Real-time Weather Forecast</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Script links -->
+    <script src="/js/weather.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

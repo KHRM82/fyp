@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop Details</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/cropDetails.css" />
+  </head>
+  <body>
+    <header>
+      <h1><%= crop.name %></h1>
+    </header>
+    <main>
+      <p><strong>Botanical Name:</strong> <%= crop.botanical_name %></p>
+      <p><strong>Family:</strong> <%= crop.family %></p>
+      <p><strong>Order:</strong> <%= crop.order %></p>
+      <p><strong>Class:</strong> <%= crop.class %></p>
+      <p><strong>Division:</strong> <%= crop.division %></p>
+      <p><strong>Chromosome Number:</strong> <%= crop.chromosome_number %></p>
+      <p><strong>Season:</strong> <%= crop.season %></p>
+      <p><strong>Planting Date:</strong> <%= crop.plantingDate %></p>
+      <p><strong>Harvest Date:</strong> <%= crop.harvestDate %></p>
+      <p><strong>Best Practices:</strong> <%= crop.bestPractices %></p>
+      <p><strong>Soil Preparation:</strong> <%= crop.soilPreparation %></p>
+      <p><strong>Irrigation:</strong> <%= crop.irrigation %></p>
+      <p><strong>Fertilizers:</strong> <%= crop.fertilizers %></p>
+      <p><strong>Pest Control:</strong> <%= crop.pestControl %></p>
+      <p><strong>Common Diseases:</strong> <%= crop.commonDiseases %></p>
+      <p><strong>Disease Symptoms:</strong> <%= crop.diseaseSymptoms %></p>
+      <p><strong>Disease Management:</strong> <%= crop.diseaseManagement %></p>
+      <p>
+        <strong>Climate Temperature:</strong> <%= crop.climate_temperature %>
+      </p>
+      <p><strong>Market Value:</strong> <%= crop.marketValue %></p>
+      <p><strong>Storage:</strong> <%= crop.storage %></p>
+      <p><strong>Usage:</strong> <%= crop.usage %></p>
+    </main>
+    <footer>
+      <p>&copy; 2024 Farmer's Companion</p>
+    </footer>
+  </body>
+</html>

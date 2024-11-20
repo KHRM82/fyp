@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+
+    <div class="container mt-5">
+      <h1>Admin Panel</h1>
+      <div class="row mt-4">
+        <!-- Crop Management Section -->
+        <div class="col-md-12">
+          <h2>Crops</h2>
+          <a href="/admin/new-crop" class="btn btn-success mb-3"
+            >Add New Crop</a
+          >
+          <table class="table table-bordered table-responsive">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Scientific Name</th>
+                <th>Variety</th>
+                <th>Description</th>
+                <th>Planting Date</th>
+                <th>Season</th>
+                <th>Planting Depth</th>
+                <th>Spacing</th>
+                <th>Seed Rate</th>
+                <th>Growth Stage</th>
+                <th>Height</th>
+                <th>LAI</th>
+                <th>Germination Rate</th>
+                <th>Temperature (Max)</th>
+                <th>Temperature (Min)</th>
+                <th>Rainfall</th>
+                <th>Sunlight</th>
+                <th>Soil Type</th>
+                <th>Soil PH</th>
+                <th>Humidity</th>
+                <th>Irrigation Schedule</th>
+                <th>Fertilizer Type</th>
+                <th>Fertilizer Application Rate</th>
+                <th>Water Source</th>
+                <th>Pest Types</th>
+                <th>Disease Types</th>
+                <th>Control Measures</th>
+                <th>Harvest Date</th>
+                <th>Yield</th>
+                <th>Quality Parameters</th>
+                <th>Storage Conditions</th>
+                <th>Location</th>
+                <th>Elevation</th>
+                <th>Market Price</th>
+                <th>Cost of Production</th>
+                <th>Profit Margin</th>
+                <th>Subsidies</th>
+                <th>Carbon Footprint</th>
+                <th>Water Usage</th>
+                <th>Pesticide Usage</th>
+                <th>Previous Yields</th>
+                <th>Previous Issues</th>
+                <th>Labor Hours</th>
+                <th>Number of Workers</th>
+                <th>Labor Costs</th>
+                <th>Technology Use</th>
+                <th>Detailed Quality Parameters</th>
+                <th>Comments</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% crops.forEach(crop => { %>
+              <tr>
+                <td><%= crop.cropName %></td>
+                <td><%= crop.scientificName %></td>
+                <td><%= crop.variety %></td>
+                <td><%= crop.description %></td>
+                <td><%= crop.plantingDate %></td>
+                <td><%= crop.season %></td>
+                <td><%= crop.plantingDepth %></td>
+                <td><%= crop.spacing %></td>
+                <td><%= crop.seedRate %></td>
+                <td><%= crop.growthStage %></td>
+                <td><%= crop.height %></td>
+                <td><%= crop.LAI %></td>
+                <td><%= crop.germinationRate %></td>
+                <td><%= crop.temperatureMax %></td>
+                <td><%= crop.temperatureMin %></td>
+                <td><%= crop.rainfall %></td>
+                <td><%= crop.sunlight %></td>
+                <td><%= crop.soilType %></td>
+                <td><%= crop.soilPH %></td>
+                <td><%= crop.humidity %></td>
+                <td><%= crop.irrigationSchedule %></td>
+                <td><%= crop.fertilizerType %></td>
+                <td><%= crop.fertilizerApplicationRate %></td>
+                <td><%= crop.waterSource %></td>
+                <td><%= crop.pestTypes %></td>
+                <td><%= crop.diseaseTypes %></td>
+                <td><%= crop.controlMeasures %></td>
+                <td><%= crop.harvestDate %></td>
+                <td><%= crop.yield %></td>
+                <td><%= crop.qualityParameters %></td>
+                <td><%= crop.storageConditions %></td>
+                <td><%= crop.location %></td>
+                <td><%= crop.elevation %></td>
+                <td><%= crop.marketPrice %></td>
+                <td><%= crop.costOfProduction %></td>
+                <td><%= crop.profitMargin %></td>
+                <td><%= crop.subsidies %></td>
+                <td><%= crop.carbonFootprint %></td>
+                <td><%= crop.waterUsage %></td>
+                <td><%= crop.pesticideUsage %></td>
+                <td><%= crop.previousYields %></td>
+                <td><%= crop.previousIssues %></td>
+                <td><%= crop.laborHours %></td>
+                <td><%= crop.numberOfWorkers %></td>
+                <td><%= crop.laborCosts %></td>
+                <td><%= crop.technologyUse %></td>
+                <td><%= crop.detailedQualityParameters %></td>
+                <td><%= crop.comments %></td>
+                <td>
+                  <a href="/edit-crop/<%= crop._id %>" class="btn btn-warning"
+                    >Edit</a
+                  >
+                  <form
+                    action="/delete-crop/<%= crop._id %>"
+                    method="POST"
+                    style="display: inline"
+                  >
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Disease Management Section -->
+        <div class="col-md-12">
+          <h2>Diseases</h2>
+          <a href="/admin/new-disease" class="btn btn-success mb-3"
+            >Add New Disease</a
+          >
+          <table class="table table-bordered table-responsive">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Scientific Name</th>
+                <th>Crop Affected</th>
+                <th>Symptoms</th>
+                <th>Disease Cycle</th>
+                <th>Favorable Conditions</th>
+                <th>Control Measures</th>
+                <th>Chemical Control</th>
+                <th>Biological Control</th>
+                <th>Cultural Control</th>
+                <th>Preventive Measures</th>
+                <th>Photos</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% diseases.forEach(disease => { %>
+              <tr>
+                <td><%= disease.diseaseName %></td>
+                <td><%= disease.scientificName %></td>
+                <td><%= disease.cropAffected %></td>
+                <td><%= disease.symptoms %></td>
+                <td><%= disease.diseaseCycle %></td>
+                <td><%= disease.favorableConditions %></td>
+                <td><%= disease.controlMeasures %></td>
+                <td><%= disease.chemicalControl %></td>
+                <td><%= disease.biologicalControl %></td>
+                <td><%= disease.culturalControl %></td>
+                <td><%= disease.preventiveMeasures %></td>
+                <td>
+                  <% disease.photos.forEach(photo => { %>
+                  <img
+                    src="/uploads/<%= photo %>"
+                    alt="Disease Photo"
+                    class="img-thumbnail"
+                    width="100"
+                  />
+                  <% }) %>
+                </td>
+                <td>
+                  <a
+                    href="/admin/edit-disease/<%= disease._id %>"
+                    class="btn btn-warning"
+                    >Edit</a
+                  >
+                  <form
+                    action="/admin/delete-disease/<%= disease._id %>"
+                    method="POST"
+                    style="display: inline"
+                  >
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
+<

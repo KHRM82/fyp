@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Crop</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="card">
+            <div class="card-header bg-warning text-white">
+              <h4 class="mb-0">Edit Crop</h4>
+            </div>
+            <div class="card-body">
+              <form action="/admin/edit-crop/<%= crop._id %>" method="POST">
+                <div class="form-group">
+                  <label for="cropName">Crop Name</label>
+                  <input
+                    type="text"
+                    id="cropName"
+                    name="cropName"
+                    class="form-control"
+                    value="<%= crop.cropName %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="scientificName">Scientific Name</label>
+                  <input
+                    type="text"
+                    id="scientificName"
+                    name="scientificName"
+                    class="form-control"
+                    value="<%= crop.scientificName %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="variety">Variety</label>
+                  <input
+                    type="text"
+                    id="variety"
+                    name="variety"
+                    class="form-control"
+                    value="<%= crop.variety %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <textarea
+                    id="description"
+                    name="description"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= crop.description %></textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="plantingDate">Planting Date</label>
+                  <input
+                    type="date"
+                    id="plantingDate"
+                    name="plantingDate"
+                    class="form-control"
+                    value="<%= crop.plantingDate.toISOString().split('T')[0] %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="season">Season</label>
+                  <input
+                    type="text"
+                    id="season"
+                    name="season"
+                    class="form-control"
+                    value="<%= crop.season %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="plantingDepth">Planting Depth</label>
+                  <input
+                    type="text"
+                    id="plantingDepth"
+                    name="plantingDepth"
+                    class="form-control"
+                    value="<%= crop.plantingDepth %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="spacing">Spacing</label>
+                  <input
+                    type="text"
+                    id="spacing"
+                    name="spacing"
+                    class="form-control"
+                    value="<%= crop.spacing %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="seedRate">Seed Rate</label>
+                  <input
+                    type="text"
+                    id="seedRate"
+                    name="seedRate"
+                    class="form-control"
+                    value="<%= crop.seedRate %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="growthStage">Growth Stage</label>
+                  <input
+                    type="text"
+                    id="growthStage"
+                    name="growthStage"
+                    class="form-control"
+                    value="<%= crop.growthStage %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="height">Height</label>
+                  <input
+                    type="text"
+                    id="height"
+                    name="height"
+                    class="form-control"
+                    value="<%= crop.height %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="LAI">Leaf Area Index (LAI)</label>
+                  <input
+                    type="text"
+                    id="LAI"
+                    name="LAI"
+                    class="form-control"
+                    value="<%= crop.LAI %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="germinationRate">Germination Rate</label>
+                  <input
+                    type="text"
+                    id="germinationRate"
+                    name="germinationRate"
+                    class="form-control"
+                    value="<%= crop.germinationRate %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="temperatureMax">Temperature Max</label>
+                  <input
+                    type="text"
+                    id="temperatureMax"
+                    name="temperatureMax"
+                    class="form-control"
+                    value="<%= crop.temperature.max %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="temperatureMin">Temperature Min</label>
+                  <input
+                    type="text"
+                    id="temperatureMin"
+                    name="temperatureMin"
+                    class="form-control"
+                    value="<%= crop.temperature.min %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="rainfall">Rainfall</label>
+                  <input
+                    type="text"
+                    id="rainfall"
+                    name="rainfall"
+                    class="form-control"
+                    value="<%= crop.rainfall %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="sunlight">Sunlight</label>
+                  <input
+                    type="text"
+                    id="sunlight"
+                    name="sunlight"
+                    class="form-control"
+                    value="<%= crop.sunlight %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="soilType">Soil Type</label>
+                  <input
+                    type="text"
+                    id="soilType"
+                    name="soilType"
+                    class="form-control"
+                    value="<%= crop.soilType %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="soilPH">Soil PH</label>
+                  <input
+                    type="text"
+                    id="soilPH"
+                    name="soilPH"
+                    class="form-control"
+                    value="<%= crop.soilPH %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="humidity">Humidity</label>
+                  <input
+                    type="text"
+                    id="humidity"
+                    name="humidity"
+                    class="form-control"
+                    value="<%= crop.humidity %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="irrigationSchedule">Irrigation Schedule</label>
+                  <input
+                    type="text"
+                    id="irrigationSchedule"
+                    name="irrigationSchedule"
+                    class="form-control"
+                    value="<%= crop.irrigationSchedule %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="fertilizerType">Fertilizer Type</label>
+                  <input
+                    type="text"
+                    id="fertilizerType"
+                    name="fertilizerType"
+                    class="form-control"
+                    value="<%= crop.fertilizerType %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="fertilizerApplicationRate"
+                    >Fertilizer Application Rate</label
+                  >
+                  <input
+                    type="text"
+                    id="fertilizerApplicationRate"
+                    name="fertilizerApplicationRate"
+                    class="form-control"
+                    value="<%= crop.fertilizerApplicationRate %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="waterSource">Water Source</label>
+                  <input
+                    type="text"
+                    id="waterSource"
+                    name="waterSource"
+                    class="form-control"
+                    value="<%= crop.waterSource %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="pestTypes">Pest Types</label>
+                  <input
+                    type="text"
+                    id="pestTypes"
+                    name="pestTypes"
+                    class="form-control"
+                    value="<%= crop.pestTypes.join(', ') %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="diseaseTypes">Disease Types</label>
+                  <input
+                    type="text"
+                    id="diseaseTypes"
+                    name="diseaseTypes"
+                    class="form-control"
+                    value="<%= crop.diseaseTypes.join(', ') %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="controlMeasures">Control Measures</label>
+                  <input
+                    type="text"
+                    id="controlMeasures"
+                    name="controlMeasures"
+                    class="form-control"
+                    value="<%= crop.controlMeasures.join(', ') %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="harvestDate">Harvest Date</label>
+                  <input
+                    type="date"
+                    id="harvestDate"
+                    name="harvestDate"
+                    class="form-control"
+                    value="<%= crop.harvestDate.toISOString().split('T')[0] %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="yield">Yield</label>
+                  <input
+                    type="text"
+                    id="yield"
+                    name="yield"
+                    class="form-control"
+                    value="<%= crop.yield %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="qualityParameters">Quality Parameters</label>
+                  <textarea
+                    id="qualityParameters"
+                    name="qualityParameters"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= JSON.stringify(crop.qualityParameters, null, 2) %></textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="storageConditions">Storage Conditions</label>
+                  <input
+                    type="text"
+                    id="storageConditions"
+                    name="storageConditions"
+                    class="form-control"
+                    value="<%= crop.storageConditions %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="location">Location</label>
+                  <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    class="form-control"
+                    value="<%= crop.location %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="coordinatesLatitude">Latitude</label>
+                  <input
+                    type="text"
+                    id="coordinatesLatitude"
+                    name="coordinatesLatitude"
+                    class="form-control"
+                    value="<%= crop.coordinates.latitude %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="coordinatesLongitude">Longitude</label>
+                  <input
+                    type="text"
+                    id="coordinatesLongitude"
+                    name="coordinatesLongitude"
+                    class="form-control"
+                    value="<%= crop.coordinates.longitude %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="elevation">Elevation</label>
+                  <input
+                    type="text"
+                    id="elevation"
+                    name="elevation"
+                    class="form-control"
+                    value="<%= crop.elevation %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="marketPrice">Market Price</label>
+                  <input
+                    type="text"
+                    id="marketPrice"
+                    name="marketPrice"
+                    class="form-control"
+                    value="<%= crop.marketPrice %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="costOfProduction">Cost of Production</label>
+                  <input
+                    type="text"
+                    id="costOfProduction"
+                    name="costOfProduction"
+                    class="form-control"
+                    value="<%= crop.costOfProduction %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="profitMargin">Profit Margin</label>
+                  <input
+                    type="text"
+                    id="profitMargin"
+                    name="profitMargin"
+                    class="form-control"
+                    value="<%= crop.profitMargin %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="subsidies">Subsidies</label>
+                  <input
+                    type="text"
+                    id="subsidies"
+                    name="subsidies"
+                    class="form-control"
+                    value="<%= crop.subsidies %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="carbonFootprint">Carbon Footprint</label>
+                  <input
+                    type="text"
+                    id="carbonFootprint"
+                    name="carbonFootprint"
+                    class="form-control"
+                    value="<%= crop.carbonFootprint %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="waterUsage">Water Usage</label>
+                  <input
+                    type="text"
+                    id="waterUsage"
+                    name="waterUsage"
+                    class="form-control"
+                    value="<%= crop.waterUsage %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="pesticideUsage">Pesticide Usage</label>
+                  <input
+                    type="text"
+                    id="pesticideUsage"
+                    name="pesticideUsage"
+                    class="form-control"
+                    value="<%= crop.pesticideUsage %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="previousYields">Previous Yields</label>
+                  <textarea
+                    id="previousYields"
+                    name="previousYields"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= JSON.stringify(crop.previousYields, null, 2) %></textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="previousIssues">Previous Issues</label>
+                  <textarea
+                    id="previousIssues"
+                    name="previousIssues"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= crop.previousIssues.join(', ') %></textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="laborHours">Labor Hours</label>
+                  <textarea
+                    id="laborHours"
+                    name="laborHours"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= JSON.stringify(crop.laborHours, null, 2) %></textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="numberOfWorkers">Number of Workers</label>
+                  <input
+                    type="text"
+                    id="numberOfWorkers"
+                    name="numberOfWorkers"
+                    class="form-control"
+                    value="<%= crop.numberOfWorkers %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="laborCosts">Labor Costs</label>
+                  <input
+                    type="text"
+                    id="laborCosts"
+                    name="laborCosts"
+                    class="form-control"
+                    value="<%= crop.laborCosts %>"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="technologyUse">Technology Use</label>
+                  <textarea
+                    id="technologyUse"
+                    name="technologyUse"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= JSON.stringify(crop.technologyUse, null, 2) %></textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="detailedQualityParameters"
+                    >Detailed Quality Parameters</label
+                  >
+                  <textarea
+                    id="detailedQualityParameters"
+                    name="detailedQualityParameters"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= JSON.stringify(crop.detailedQualityParameters, null, 2) %></textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="comments">Comments</label>
+                  <textarea
+                    id="comments"
+                    name="comments"
+                    class="form-control"
+                    rows="3"
+                    required
+                  >
+<%= crop.comments %></textarea
+                  >
+                </div>
+                <button type="submit" class="btn btn-warning btn-block">
+                  Update Crop
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: linear-gradient(to bottom, #1e3a8a, #3b82f6);
+        color: white;
+      }
+      .overlay {
+        background: rgba(0, 0, 0, 0.6);
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay flex items-center justify-center">
+      <div class="container mx-auto p-6 text-center">
+        <a
+          style="
+            position: relative;
+            bottom: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            line-height: 30px;
+            background-color: transparent;
+            cursor: pointer;
+            width: 1.5em;
+            padding: 2px;
+            a:hover {
+              transform: scale(1.1);
+            }
+          "
+          href="/"
+          >back to home</a
+        >
+
+        <h1 class="text-5xl font-bold mb-4">Weather Forecast</h1>
+        <div class="flex justify-center mb-4">
+          <input
+            id="cityInput"
+            type="text"
+            placeholder="Enter city name"
+            class="border border-white p-3 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-white text-black"
+          />
+          <button
+            onclick="getWeatherByCity()"
+            class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-r-lg"
+          >
+            Search
+          </button>
+        </div>
+        <div>
+          <p class="mb-4 font-bold">or</p>
+        </div>
+        <div class="flex justify-center mb-4">
+          <button
+            onclick="getCurrentLocationWeather()"
+            class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded"
+          >
+            Use My Location
+          </button>
+        </div>
+
+        <div class="mt-4 text-center">
+          <label for="recentCitiesDropdown" class="block text-sm mb-2"
+            >Recently Searched Cities:</label
+          >
+          <select
+            id="recentCitiesDropdown"
+            class="border border-white bg-transparent mb-4 capitalize hidden bg-white text-black"
+            onchange="getWeatherFromDropdown(this)"
+          ></select>
+        </div>
+
+        <div
+          id="weatherDisplay"
+          class="p-6 bg-white text-black rounded shadow-md max-w-md mx-auto hidden"
+        >
+          <h2 class="text-4xl font-bold" id="cityName"></h2>
+          <img
+            id="weatherIcon"
+            src=""
+            alt="Weather Icon"
+            class="w-24 h-24 my-4 mx-auto"
+          />
+          <p class="text-xl capitalize" id="weatherDescription"></p>
+          <p class="text-lg">Temperature: <span id="temperature"></span>°C</p>
+          <p class="text-lg">Humidity: <span id="humidity"></span>%</p>
+          <p class="text-lg">Wind Speed: <span id="windSpeed"></span> m/s</p>
+        </div>
+
+        <h2 id="forecastTitle" class="text-3xl font-bold mt-6 hidden">
+          5 DAYS WEATHER FORECAST
+        </h2>
+        <div
+          id="extendedForecast"
+          class="mt-4 grid grid-cols-1 md:grid-cols-5 gap-4 hidden"
+        ></div>
+      </div>
+    </div>
+    <script defer src="/js/weather.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      <%= type.charAt(0).toUpperCase() + type.slice(1) %> Management
+    </title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/crops.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        <%= type.charAt(0).toUpperCase() + type.slice(1) %> Management
+        Techniques
+      </h1>
+    </header>
+    <main>
+      <ul id="crop-list">
+        <% crops.forEach(crop => { %>
+        <li>
+          <a href="/crops/<%= crop._id %>"><%= crop.name %></a>
+        </li>
+        <% }) %>
+      </ul>
+    </main>
+    <footer>
+      <p>&copy; 2024 Farmer's Companion</p>
+    </footer>
+  </body>
+</html>

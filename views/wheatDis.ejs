@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wheat Management</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/cropDetails.css" />
+    <style>
+      .section-title {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .disease-img {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        margin-bottom: 15px;
+      }
+      .card {
+        margin-bottom: 30px;
+        border: none;
+      }
+      .card-body {
+        padding: 1.25rem;
+        background-color: #f9f9f9;
+      }
+      .nav-link {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-primary text-white text-center py-4 mb-4">
+      <h1>Wheat Diseases, Symptoms and Control</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Farmer's Companion</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#rust">Rust</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#smut">Smut</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#blight">Blight</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#powderyMildew">Powdery Mildew</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#leafSpot">Leaf Spot</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#rootRot">Root Rot</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#stemRust">Stem Rust</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#stripeRust">Stripe Rust</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#fusariumHeadBlight"
+                >Fusarium Head Blight</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tanSpot">Tan Spot</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#septoriaBlotch">Septoria Blotch</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#takeAll">Take-All</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#barleyYellowDwarf"
+                >Barley Yellow Dwarf</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#wheatStreakMosaic"
+                >Wheat Streak Mosaic</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#ergot">Ergot</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <!-- Disease 1: Rust -->
+      <section id="rust" class="mb-5">
+        <h2 class="section-title">Rust</h2>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/images/wheat_rust.jpg"
+                alt="Rust on Wheat"
+                class="disease-img"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3>Symptoms</h3>
+                <p>Yellowish-orange pustules on leaves.</p>
+                <h3>Best Practices to Control Rust</h3>
+                <ul>
+                  <li>Use disease-resistant varieties.</li>
+                  <li>Apply fungicides as per recommendations.</li>
+                  <li>Ensure proper crop rotation.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disease 2: Smut -->
+      <section id="smut" class="mb-5">
+        <h2 class="section-title">Smut</h2>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/images/wheat_smut.jpg"
+                alt="Smut on Wheat"
+                class="disease-img"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3>Symptoms</h3>
+                <p>Black powdery masses on kernels.</p>
+                <h3>Best Practices to Control Smut</h3>
+                <ul>
+                  <li>Regular monitoring of fields.</li>
+                  <li>Use certified seeds treated with fungicides.</li>
+                  <li>Practice crop rotation and deep plowing.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disease 3: Blight -->
+      <section id="blight" class="mb-5">
+        <h2 class="section-title">Blight</h2>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/images/wheat_blight.jpg"
+                alt="Blight on Wheat"
+                class="disease-img"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3>Symptoms</h3>
+                <p>Yellowing and blighting of leaves, fungal growth.</p>
+                <h3>Best Practices to Control Blight</h3>
+                <ul>
+                  <li>Apply fungicides early in the infection.</li>
+                  <li>Remove and destroy infected plants.</li>
+                  <li>Ensure proper field sanitation.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disease 4: Powdery Mildew -->
+      <section id="powdery-mildew" class="mb-5">
+        <h2 class="section-title">Powdery Mildew</h2>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/images/wheat_powdery_mildew.jpg"
+                alt="Powdery Mildew on Wheat"
+                class="disease-img"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3>Symptoms</h3>
+                <p>White, powdery fungal growth on leaves and stems.</p>
+                <h3>Best Practices to Control Powdery Mildew</h3>
+                <ul>
+                  <li>Apply sulfur-based fungicides.</li>
+                  <li>Ensure proper air circulation.</li>
+                  <li>Remove and destroy infected plant parts.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disease 5: Septoria Leaf Blotch -->
+      <section id="septoria-leaf-blotch" class="mb-5">
+        <h2 class="section-title">Septoria Leaf Blotch</h2>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/images/wheat_septoria_leaf_blotch.jpg"
+                alt="Septoria Leaf Blotch on Wheat"
+                class="disease-img"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3>Symptoms</h3>
+                <p>
+                  Small, yellowish-brown spots on leaves, often with a yellow
+                  halo.
+                </p>
+                <h3>Best Practices to Control Septoria Leaf Blotch</h3>
+                <ul>
+                  <li>Apply fungicides at the first sign of disease.</li>
+                  <li>Practice crop rotation with non-host crops.</li>
+                  <li>Remove plant debris after harvest.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disease 6: Fusarium Head Blight -->
+      <section id="fusarium-head-blight" class="mb-5">
+        <h2 class="section-title">Fusarium Head Blight</h2>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/images/wheat_fusarium_head_blight.jpg"
+                alt="Fusarium Head Blight on Wheat"
+                class="disease-img"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3>Symptoms</h3>
+                <p>
+                  Bleached spikelets on heads, pink or orange mold at the base
+                  of spikelets.
+                </p>
+                <h3>Best Practices to Control Fusarium Head Blight</h3>
+                <ul>
+                  <li>Use resistant varieties.</li>
+                  <li>Apply fungicides at early flowering.</li>
+                  <li>Practice crop rotation and tillage.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disease 7: Common Bunt -->
+      <section id="common-bunt" class="mb-5">
+        <h2 class="section-title">Common Bunt</h2>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/images/wheat_common_bunt.jpg"
+                alt="Common Bunt on Wheat"
+                class="disease-img"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3>Symptoms</h3>
+                <p>
+                  Black powdery masses in grain kernels, giving off a fishy
+                  smell.
+                </p>
+                <h3>Best Practices to Control Common Bunt</h3>
+                <ul>
+                  <li>Use fungicide-treated seeds.</li>
+                  <li>Practice crop rotation.</li>
+                  <li>Remove and destroy infected plants.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disease 8: Wheat Streak Mosaic -->
+      <section id="wheat-streak-mosaic" class="mb-5">
+        <h2 class="section-title">Wheat Streak Mosaic</h2>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/images/wheat_streak_mosaic.jpg"
+                alt="Wheat Streak Mosaic on Wheat"
+                class="disease-img"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3>Symptoms</h3>
+                <p>Yellow streaks or mottling on leaves.</p>
+                <h3>Best Practices to Control Wheat Streak Mosaic</h3>
+                <ul>
+                  <li>Use virus-resistant varieties.</li>
+                  <li>Control volunteer wheat and grassy weeds.</li>
+                  <li>Avoid planting wheat adjacent to infected fields.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disease 9: Leaf Rust -->
+      <section id="leaf-rust" class="mb-5">
+        <h2 class="section-title">Leaf Rust</h2>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/images/wheat_leaf_rust.jpg"
+                alt="Leaf Rust on Wheat"
+                class="disease-img"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3>Symptoms</h3>
+                <p>Small, reddish-brown pustules on leaves.</p>
+                <h3>Best Practices to Control Leaf Rust</h3>
+                <ul>
+                  <li>Use resistant varieties.</li>
+                  <li>Apply fungicides as needed.</li>
+                  <li>Remove volunteer wheat plants.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disease 10: Take-All -->
+      <section id="take-all" class="mb-5">
+        <h2 class="section-title">Take-All</h2>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/images/wheat_take_all.jpg"
+                alt="Take-All on Wheat"
+                class="disease-img"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3>Symptoms</h3>
+                <p>Blackened roots and lower stems, stunted growth.</p>
+                <h3>Best Practices to Control Take-All</h3>
+                <ul>
+                  <li>Practice crop rotation with non-host crops.</li>
+                  <li>Apply lime to increase soil pH.</li>
+                  <li>Use fungicides if available.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disease 11: Barley Yellow Dwarf Virus -->
+      <section id="barley-yellow-dwarf" class="mb-5">
+        <h2 class="section-title">Barley Yellow Dwarf Virus</h2>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/images/wheat_barley_yellow_dwarf.jpg"
+                alt="Barley Yellow Dwarf Virus on Wheat"
+                class="disease-img"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3>Symptoms</h3>
+                <p>Yellowing or reddening of leaves, stunted growth.</p>
+                <h3>Best Practices to Control Barley Yellow Dwarf Virus</h3>
+                <ul>
+                  <li>Use virus-resistant varieties.</li>
+                  <li>Control aphid vectors.</li>
+                  <li>Delay planting to avoid peak aphid activity.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disease 12: Crown Rot -->
+      <section id="crown-rot" class="mb-5">
+        <h2 class="section-title">Crown Rot</h2>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/images/wheat_crown_rot.jpg"
+                alt="Crown Rot on Wheat"
+                class="disease-img"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3>Symptoms</h3>
+                <p>
+                  Brown discoloration at the base of the stems, stunted growth.
+                </p>
+                <h3>Best Practices to Control Crown Rot</h3>
+                <ul>
+                  <li>Use disease-free seeds.</li>
+                  <li>Rotate crops with non-cereal crops.</li>
+                  <li>Improve soil drainage.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disease 13: Tan Spot -->
+      <section id="tan-spot" class="mb-5">
+        <h2 class="section-title">Tan Spot</h2>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/images/wheat_tan_spot.jpg"
+                alt="Tan Spot on Wheat"
+                class="disease-img"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3>Symptoms</h3>
+                <p>Small, tan-colored spots on leaves with a yellow halo.</p>
+                <h3>Best Practices to Control Tan Spot</h3>
+                <ul>
+                  <li>Apply fungicides at the first sign of disease.</li>
+                  <li>Practice crop rotation with non-host crops.</li>
+                  <li>Remove plant debris after harvest.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disease 14: Root Rot -->
+      <section id="root-rot" class="mb-5">
+        <h2 class="section-title">Root Rot</h2>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/images/wheat_root_rot.png"
+                alt="Root Rot on Wheat"
+                class="disease-img"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3>Symptoms</h3>
+                <p>Brown, rotting roots, stunted growth.</p>
+                <h3>Best Practices to Control Root Rot</h3>
+                <ul>
+                  <li>Use disease-free seeds.</li>
+                  <li>Rotate crops to break disease cycle.</li>
+                  <li>Improve soil drainage and avoid waterlogging.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disease 15: Ergot -->
+      <section id="ergot" class="mb-5">
+        <h2 class="section-title">Ergot</h2>
+        <div class="card">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/images/wheat_ergot.jpg"
+                alt="Ergot on Wheat"
+                class="disease-img"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3>Symptoms</h3>
+                <p>Hard, dark-colored sclerotia replacing grains.</p>
+                <h3>Best Practices to Control Ergot</h3>
+                <ul>
+                  <li>Use ergot-free seeds.</li>
+                  <li>Rotate crops with non-host crops.</li>
+                  <li>Destroy infected plant debris.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-primary text-white text-center py-3">
+      <p>&copy; 2024 Farmer's Companion</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
