@@ -9,10 +9,12 @@ const flash = require("connect-flash");
 const methodOverride = require("method-override");
 const connectDB = require("./middleware/backend/config/dbConfig");
 
+// Import routes
 const feedbackRouter = require("./routes/feedback");
 const adminRoutes = require("./routes/backend/adminRoutes");
 const cropRoutes = require("./routes/backend/cropRoutes");
 const diseaseRoutes = require("./routes/backend/diseaseRoutes");
+const frontendRoutes = require("./routes/frontendRoutes");
 
 connectDB(); // Initialize database connection
 
@@ -21,7 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Method override middleware
-app.use(methodOverride("_method")); // Ensure this is included
+app.use(methodOverride("_method"));
 
 // Middleware to serve static files
 app.use(express.static(path.join(__dirname, "public")));
@@ -53,21 +55,9 @@ app.use((req, res, next) => {
   next();
 });
 
-// Static routes for crop pages
-app.get("/wheat", (req, res) => {
-  res.render("wheat");
-});
-
-app.get("/maize", (req, res) => {
-  res.render("maize");
-});
-
+// Static routes for specific pages
 app.get("/weather-forecast", (req, res) => {
   res.render("weather-forecast");
-});
-
-app.get("/sugarcane", (req, res) => {
-  res.render("sugarcane");
 });
 
 app.get("/tools-equipments", (req, res) => {
@@ -80,18 +70,6 @@ app.get("/market-information", (req, res) => {
 
 app.get("/crop-management", (req, res) => {
   res.render("cropManagement");
-});
-
-app.get("/wheatDis", (req, res) => {
-  res.render("wheatDis");
-});
-
-app.get("/maizeDis", (req, res) => {
-  res.render("maizeDis");
-});
-
-app.get("/sugarcaneDis", (req, res) => {
-  res.render("sugarcaneDis");
 });
 
 // Preserve feedback routes
@@ -107,7 +85,7 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-const frontendRoutes = require("./routes/frontendRoutes");
+// Use frontend routes
 app.use(frontendRoutes);
 
 // Admin routes
