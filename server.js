@@ -107,6 +107,9 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
+const frontendRoutes = require("./routes/frontendRoutes");
+app.use(frontendRoutes);
+
 // Admin routes
 app.use(adminRoutes);
 app.use(cropRoutes);
