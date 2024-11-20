@@ -9,34 +9,62 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <style>
-      .card-body {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+      body {
+        background-color: #f8f9fa;
+      }
+      .navbar {
+        background-color: #343a40;
+      }
+      .navbar a {
+        color: #ffffff !important;
+      }
+      .container {
+        margin-top: 2rem;
+      }
+      .card {
+        transition: transform 0.2s;
+      }
+      .card:hover {
+        transform: scale(1.05);
       }
       .card-title {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
+        color: #343a40;
         margin-bottom: 0.75rem;
       }
       .card-text {
         margin-bottom: 1rem;
+        color: #6c757d;
       }
       .btn-primary {
-        align-self: flex-end;
+        background-color: #007bff;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+      .footer {
+        margin-top: 4rem;
+        padding: 1rem;
+        background-color: #343a40;
+        color: #ffffff;
+        text-align: center;
       }
     </style>
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a href="/" class="navbar-brand">Home</a>
+        <a href="javascript:history.back()" class="navbar-brand">Back</a>
+      </div>
+    </nav>
     <div class="container mt-5">
       <h1 class="text-center">Disease List</h1>
-      <div class="d-flex justify-content-between mb-3">
-        <a href="/" class="btn btn-secondary">Home</a>
-        <a href="javascript:history.back()" class="btn btn-secondary">Back</a>
-      </div>
-      <div class="row">
+      <div class="row mt-4">
         <% diseases.forEach(disease => { %>
         <div class="col-md-4 mb-4">
-          <div class="card h-100">
+          <div class="card h-100 shadow-sm">
             <div class="card-body">
               <h5 class="card-title"><%= disease.diseaseName %></h5>
               <p class="card-text">
@@ -51,8 +79,11 @@
         <% }) %>
       </div>
     </div>
+    <div class="footer">
+      <p>&copy; 2024 Farmer's Companion</p>
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.amazonaws.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
