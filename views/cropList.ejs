@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop List</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+      }
+      .card-text {
+        margin-bottom: 1rem;
+      }
+      .btn-primary {
+        align-self: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">Crop List</h1>
+      <div class="d-flex justify-content-between mb-3">
+        <a href="/" class="btn btn-secondary">Home</a>
+        <a href="javascript:history.back()" class="btn btn-secondary">Back</a>
+      </div>
+      <div class="row">
+        <% crops.forEach(crop => { %>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><%= crop.cropName %></h5>
+              <p class="card-text">
+                Scientific Name: <%= crop.scientificName %>
+              </p>
+              <a href="/crop/<%= crop._id %>" class="btn btn-primary"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

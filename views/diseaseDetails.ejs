@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disease Details</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .card-header {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .card-body {
+        font-size: 1rem;
+      }
+      .btn-secondary,
+      .btn-primary {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-header text-center"><%= disease.diseaseName %></div>
+        <div class="card-body">
+          <p><strong>Scientific Name:</strong> <%= disease.scientificName %></p>
+          <p><strong>Crop Affected:</strong> <%= disease.cropAffected %></p>
+          <p><strong>Symptoms:</strong> <%= disease.symptoms %></p>
+          <p><strong>Disease Cycle:</strong> <%= disease.diseaseCycle %></p>
+          <p>
+            <strong>Favorable Conditions:</strong> <%=
+            disease.favorableConditions %>
+          </p>
+          <p>
+            <strong>Control Measures:</strong> <%= disease.controlMeasures %>
+          </p>
+          <p>
+            <strong>Chemical Control:</strong> <%= disease.chemicalControl %>
+          </p>
+          <p>
+            <strong>Biological Control:</strong> <%= disease.biologicalControl
+            %>
+          </p>
+          <p>
+            <strong>Cultural Control:</strong> <%= disease.culturalControl %>
+          </p>
+          <p>
+            <strong>Preventive Measures:</strong> <%= disease.preventiveMeasures
+            %>
+          </p>
+          <p>
+            <strong>Photos:</strong>
+            <% disease.photos.forEach(photo => { %>
+            <img
+              src="<%= photo %>"
+              alt="Disease photo"
+              class="img-fluid mt-2"
+            />
+            <% }) %>
+          </p>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between mt-3">
+        <a href="/diseases" class="btn btn-secondary">Back to Disease List</a>
+        <a href="/" class="btn btn-primary">Home</a>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -4,40 +4,98 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crop Details</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/cropDetails.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .card-header {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .card-body {
+        font-size: 1rem;
+      }
+      .btn-secondary,
+      .btn-primary {
+        margin-top: 20px;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <h1><%= crop.name %></h1>
-    </header>
-    <main>
-      <p><strong>Botanical Name:</strong> <%= crop.botanical_name %></p>
-      <p><strong>Family:</strong> <%= crop.family %></p>
-      <p><strong>Order:</strong> <%= crop.order %></p>
-      <p><strong>Class:</strong> <%= crop.class %></p>
-      <p><strong>Division:</strong> <%= crop.division %></p>
-      <p><strong>Chromosome Number:</strong> <%= crop.chromosome_number %></p>
-      <p><strong>Season:</strong> <%= crop.season %></p>
-      <p><strong>Planting Date:</strong> <%= crop.plantingDate %></p>
-      <p><strong>Harvest Date:</strong> <%= crop.harvestDate %></p>
-      <p><strong>Best Practices:</strong> <%= crop.bestPractices %></p>
-      <p><strong>Soil Preparation:</strong> <%= crop.soilPreparation %></p>
-      <p><strong>Irrigation:</strong> <%= crop.irrigation %></p>
-      <p><strong>Fertilizers:</strong> <%= crop.fertilizers %></p>
-      <p><strong>Pest Control:</strong> <%= crop.pestControl %></p>
-      <p><strong>Common Diseases:</strong> <%= crop.commonDiseases %></p>
-      <p><strong>Disease Symptoms:</strong> <%= crop.diseaseSymptoms %></p>
-      <p><strong>Disease Management:</strong> <%= crop.diseaseManagement %></p>
-      <p>
-        <strong>Climate Temperature:</strong> <%= crop.climate_temperature %>
-      </p>
-      <p><strong>Market Value:</strong> <%= crop.marketValue %></p>
-      <p><strong>Storage:</strong> <%= crop.storage %></p>
-      <p><strong>Usage:</strong> <%= crop.usage %></p>
-    </main>
-    <footer>
-      <p>&copy; 2024 Farmer's Companion</p>
-    </footer>
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-header text-center"><%= crop.cropName %></div>
+        <div class="card-body">
+          <p><strong>Scientific Name:</strong> <%= crop.scientificName %></p>
+          <p><strong>Description:</strong> <%= crop.description %></p>
+          <p><strong>Planting Date:</strong> <%= crop.plantingDate %></p>
+          <p><strong>Season:</strong> <%= crop.season %></p>
+          <p><strong>Planting Depth:</strong> <%= crop.plantingDepth %></p>
+          <p><strong>Spacing:</strong> <%= crop.spacing %></p>
+          <p><strong>Seed Rate:</strong> <%= crop.seedRate %></p>
+          <p><strong>Growth Stage:</strong> <%= crop.growthStage %></p>
+          <p><strong>Height:</strong> <%= crop.height %></p>
+          <p><strong>LAI:</strong> <%= crop.LAI %></p>
+          <p><strong>Germination Rate:</strong> <%= crop.germinationRate %></p>
+          <p><strong>Temperature (Max):</strong> <%= crop.temperatureMax %></p>
+          <p><strong>Temperature (Min):</strong> <%= crop.temperatureMin %></p>
+          <p><strong>Rainfall:</strong> <%= crop.rainfall %></p>
+          <p><strong>Sunlight:</strong> <%= crop.sunlight %></p>
+          <p><strong>Soil Type:</strong> <%= crop.soilType %></p>
+          <p><strong>Soil PH:</strong> <%= crop.soilPH %></p>
+          <p><strong>Humidity:</strong> <%= crop.humidity %></p>
+          <p>
+            <strong>Irrigation Schedule:</strong> <%= crop.irrigationSchedule %>
+          </p>
+          <p><strong>Fertilizer Type:</strong> <%= crop.fertilizerType %></p>
+          <p>
+            <strong>Fertilizer Application Rate:</strong> <%=
+            crop.fertilizerApplicationRate %>
+          </p>
+          <p><strong>Water Source:</strong> <%= crop.waterSource %></p>
+          <p><strong>Pest Types:</strong> <%= crop.pestTypes %></p>
+          <p><strong>Disease Types:</strong> <%= crop.diseaseTypes %></p>
+          <p><strong>Control Measures:</strong> <%= crop.controlMeasures %></p>
+          <p><strong>Harvest Date:</strong> <%= crop.harvestDate %></p>
+          <p><strong>Yield:</strong> <%= crop.yield %></p>
+          <p>
+            <strong>Quality Parameters:</strong> <%= crop.qualityParameters %>
+          </p>
+          <p>
+            <strong>Storage Conditions:</strong> <%= crop.storageConditions %>
+          </p>
+          <p><strong>Location:</strong> <%= crop.location %></p>
+          <p><strong>Elevation:</strong> <%= crop.elevation %></p>
+          <p><strong>Market Price:</strong> <%= crop.marketPrice %></p>
+          <p>
+            <strong>Cost of Production:</strong> <%= crop.costOfProduction %>
+          </p>
+          <p><strong>Profit Margin:</strong> <%= crop.profitMargin %></p>
+          <p><strong>Subsidies:</strong> <%= crop.subsidies %></p>
+          <p><strong>Carbon Footprint:</strong> <%= crop.carbonFootprint %></p>
+          <p><strong>Water Usage:</strong> <%= crop.waterUsage %></p>
+          <p><strong>Pesticide Usage:</strong> <%= crop.pesticideUsage %></p>
+          <p><strong>Previous Yields:</strong> <%= crop.previousYields %></p>
+          <p><strong>Previous Issues:</strong> <%= crop.previousIssues %></p>
+          <p><strong>Labor Hours:</strong> <%= crop.laborHours %></p>
+          <p><strong>Number of Workers:</strong> <%= crop.numberOfWorkers %></p>
+          <p><strong>Labor Costs:</strong> <%= crop.laborCosts %></p>
+          <p><strong>Technology Use:</strong> <%= crop.technologyUse %></p>
+          <p>
+            <strong>Detailed Quality Parameters:</strong> <%=
+            crop.detailedQualityParameters %>
+          </p>
+          <p><strong>Comments:</strong> <%= crop.comments %></p>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between mt-3">
+        <a href="/crops" class="btn btn-secondary">Back to Crop List</a>
+        <a href="/" class="btn btn-primary">Home</a>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
