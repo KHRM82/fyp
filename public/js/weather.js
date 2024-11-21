@@ -18,7 +18,7 @@ function getCurrentLocationWeather() {
         const lon = position.coords.longitude;
         fetchWeatherByCoordinates(lat, lon);
       },
-      () => alert("trying to  retrieve your location.")
+      () => alert("Trying to  retrieve your location.")
     );
   } else {
     alert("Geolocation is not supported by this browser.");

@@ -40,7 +40,7 @@ router.put("/admin/edit-disease/:id", async (req, res) => {
 // Route to delete an existing disease
 router.delete("/admin/delete-disease/:id", async (req, res) => {
   try {
-    await disease.findByIdAndDelete(req.params.id);
+    await Disease.findByIdAndDelete(req.params.id);
     res.redirect("/admin");
   } catch (error) {
     res.status(500).send("Error deleting disease: " + error.message);
