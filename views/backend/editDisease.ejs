@@ -29,11 +29,9 @@
             </div>
             <div class="card-body">
               <form
-                action="/admin/edit-disease/<%= disease._id %>"
+                action="/admin/edit-disease/<%= disease._id %>?_method=PUT"
                 method="POST"
-                enctype="multipart/form-data"
               >
-                <input type="hidden" name="_method" value="PUT" />
                 <div class="form-group">
                   <label for="diseaseName">Disease Name</label>
                   <input

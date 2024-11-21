@@ -28,7 +28,7 @@ router.get("/edit-crop/:id", async (req, res) => {
   }
 });
 
-router.post("/edit-crop/:id", async (req, res) => {
+router.put("/admin/edit-crop/:id", async (req, res) => {
   try {
     await Crop.findByIdAndUpdate(req.params.id, req.body);
     res.redirect("/admin");
