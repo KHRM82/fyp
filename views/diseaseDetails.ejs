@@ -38,6 +38,10 @@
       }
       .card-body img {
         margin-top: 10px;
+        max-width: 300px;
+        max-height: 300px;
+        display: block;
+        margin-bottom: 15px;
       }
       .btn-primary,
       .btn-secondary {
@@ -88,16 +92,10 @@
             <strong>Preventive Measures:</strong> <%= disease.preventiveMeasures
             %>
           </p>
-          <p>
-            <strong>Photos:</strong>
-            <% disease.photos.forEach(photo => { %>
-            <img
-              src="<%= photo %>"
-              alt="Disease photo"
-              class="img-fluid mt-2"
-            />
-            <% }) %>
+          <p><strong>Photos:</strong>
+            <img src="<%= disease.photoPath %>" alt="Disease Photo" class="img-fluid mt-2" />
           </p>
+          </div>
         </div>
       </div>
     </div>

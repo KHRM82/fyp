@@ -14,7 +14,7 @@ const diseaseSchema = new Schema(
     biologicalControl: { type: String, required: true },
     culturalControl: { type: String, required: true },
     preventiveMeasures: { type: String, required: true },
-    photos: { type: [String], required: false },
+    photoPath: { type: String, required: false }, // Single image path
   },
   {
     timestamps: true,

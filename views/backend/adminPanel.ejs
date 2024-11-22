@@ -192,14 +192,11 @@
                 <td><%= disease.culturalControl %></td>
                 <td><%= disease.preventiveMeasures %></td>
                 <td>
-                  <% disease.photos.forEach(photo => { %>
                   <img
-                    src="/uploads/<%= photo %>"
+                    src="<%= disease.photoPath %>"
                     alt="Disease Photo"
-                    class="img-thumbnail"
-                    width="100"
+                    class="img-fluid mt-2"
                   />
-                  <% }) %>
                 </td>
                 <td>
                   <a

@@ -28,7 +28,11 @@
               <h4 class="mb-0">Add New Disease</h4>
             </div>
             <div class="card-body">
-              <form action="/admin/new-disease" method="POST">
+              <form
+                action="/admin/new-disease"
+                method="POST"
+                enctype="multipart/form-data"
+              >
                 <div class="form-group">
                   <label for="diseaseName">Disease Name</label>
                   <input
@@ -140,13 +144,13 @@
                   ></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="photos">Upload Photos</label>
+                  <label for="photo">Upload Image</label>
                   <input
                     type="file"
-                    id="photos"
-                    name="photos"
+                    name="photo"
+                    id="photo"
+                    accept="image/*"
                     class="form-control"
-                    multiple
                   />
                 </div>
                 <button type="submit" class="btn btn-success btn-block">
