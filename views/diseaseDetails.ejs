@@ -13,7 +13,7 @@
         background-color: #f8f9fa;
       }
       .navbar {
-        background-color: #343a40;
+        background-color: #3ed810;
       }
       .navbar a {
         color: #ffffff !important;
@@ -30,7 +30,7 @@
       .card-header {
         font-size: 1.5rem;
         font-weight: bold;
-        color: #343a40;
+        color: #21ce30;
       }
       .card-body p {
         font-size: 1rem;
@@ -50,10 +50,13 @@
       .footer {
         margin-top: 4rem;
         padding: 1rem;
-        background-color: #343a40;
+        background-color: #30ca45;
         color: #ffffff;
         text-align: center;
+        
       }
+      .detailImage{
+        border: 2px solid black;}
     </style>
   </head>
   <body>
@@ -93,7 +96,7 @@
             %>
           </p>
           <p><strong>Photos:</strong>
-            <img src="<%= disease.photoPath %>" alt="Disease Photo" class="img-fluid mt-2" />
+            <img src="<%= disease.photoPath %>" alt="Disease Photo" class="img-fluid detailImage mt-2" />
           </p>
           </div>
         </div>
